@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296 264" width="100%" height="100%">
+  <!-- Toolbox Handle & Header -->
+  <path fill="#27272A" fill-rule="evenodd" d="m83 22 22-22v42H83zm130 0L191 0v42h22z"/>
+  <path fill="#18181B" d="M105 0h86v21h-86z"/>
+  <!-- Toolbox Body Frame -->
+  <path fill="#18181B" d="M272 264H24a24 24 0 0 1-24-24V83.238L41.238 42h213.524L296 83.238V240a24 24 0 0 1-24 24"/>
+  <!-- Front Panel Background -->
+  <path fill="#27272A" d="M34 127h228v137H34z"/>
+  <path fill="#3F3F46" d="M49 143h76v85H49zm0 104h98v17H49z"/>
+  <!-- Wrench & Gear Accent in Bright Orange -->
+  <path fill="#FF5B19" fill-rule="evenodd" d="M213 232.1V264h-42v-31.447a49.507 49.507 0 0 1-1-89.651V190l21 13 22-13v-47.1a49.518 49.518 0 0 1 0 89.2"/>
+  <!-- Clasps -->
+  <circle cx="57.5" cy="103.5" r="8.5" fill="#E5DFD7"/>
+  <circle cx="82.5" cy="103.5" r="8.5" fill="#E5DFD7"/>
+</svg>
