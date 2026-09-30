@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3. Active Nav State on Scroll (Scroll Spy)
-  const sections = ['home', 'about', 'skills', 'industries', 'work', 'experience', 'contact'];
+  const sections = ['home', 'about', 'what-i-do', 'skills', 'industries', 'work', 'experience', 'contact'];
   const desktopLinks = document.querySelectorAll('#desktop-nav .nav-link');
   const mobileLinks = document.querySelectorAll('#mobile-menu .mobile-nav-link');
 
@@ -207,97 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDots();
   }
 
-  // ==========================================
-  // Skills & Technologies Slider (8 desktop, 4 tablet, 2 mobile)
-  // ==========================================
-  const skillsTrack = document.getElementById('skills-slider-track');
-  const skillsPrevBtn = document.getElementById('skills-slider-prev');
-  const skillsNextBtn = document.getElementById('skills-slider-next');
-  const skillsViewport = document.getElementById('skills-slider-viewport');
 
-  if (skillsTrack && skillsPrevBtn && skillsNextBtn) {
-    const slides = Array.from(skillsTrack.querySelectorAll('.skills-slide'));
-    let currentIndex = 0;
-
-    const getSlidesPerView = () => {
-      const width = window.innerWidth;
-      if (width < 640) return 1; // 1 on mobile
-      if (width < 1024) return 2; // 2 on tablet
-      return 4; // exactly 4 on desktop
-    };
-
-    const getMaxIndex = () => {
-      const spv = getSlidesPerView();
-      return Math.max(0, slides.length - spv);
-    };
-
-    const updateArrows = () => {
-      // Keep both custom styled arrows fully active and responsive
-      skillsPrevBtn.style.opacity = '1';
-      skillsPrevBtn.style.pointerEvents = 'auto';
-      skillsNextBtn.style.opacity = '1';
-      skillsNextBtn.style.pointerEvents = 'auto';
-    };
-
-    const goToSlide = (index) => {
-      const maxIdx = getMaxIndex();
-      if (index < 0) {
-        currentIndex = maxIdx;
-      } else if (index > maxIdx) {
-        currentIndex = 0;
-      } else {
-        currentIndex = index;
-      }
-
-      if (slides[currentIndex] && slides[0]) {
-        const offset = slides[currentIndex].offsetLeft - slides[0].offsetLeft;
-        skillsTrack.style.transform = `translateX(-${offset}px)`;
-      }
-      updateArrows();
-    };
-
-    skillsPrevBtn.addEventListener('click', () => {
-      goToSlide(currentIndex - 1);
-    });
-
-    skillsNextBtn.addEventListener('click', () => {
-      goToSlide(currentIndex + 1);
-    });
-
-    // Touch Swipe Support for Mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    if (skillsViewport) {
-      skillsViewport.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-
-      skillsViewport.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 35) {
-          if (diff > 0) {
-            goToSlide(currentIndex + 1);
-          } else {
-            goToSlide(currentIndex - 1);
-          }
-        }
-      }, { passive: true });
-    }
-
-    let skillsResizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(skillsResizeTimer);
-      skillsResizeTimer = setTimeout(() => {
-        const maxIdx = getMaxIndex();
-        if (currentIndex > maxIdx) currentIndex = maxIdx;
-        goToSlide(currentIndex);
-      }, 100);
-    });
-
-    goToSlide(0);
-  }
 
   // ==========================================
   // Industry Experience Slider (4 desktop, 2 tablet, 1 mobile)

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="46" height="46" fill="none">
+  <!-- Globe with Latitude & Longitude -->
+  <circle cx="21" cy="21" r="16" stroke="#18181B" stroke-width="2.5" />
+  <ellipse cx="21" cy="21" rx="8" ry="16" stroke="#18181B" stroke-width="2" />
+  <path d="M5.5 21 H36.5" stroke="#18181B" stroke-width="2" />
+  <path d="M8 12 H34" stroke="#18181B" stroke-width="1.8" />
+  <path d="M8 30 H34" stroke="#18181B" stroke-width="1.8" />
+  
+  <!-- Magnifying Glass Inspecting Webpage / Search Ranking -->
+  <circle cx="34" cy="30" r="7.5" fill="#FFFFFF" stroke="#18181B" stroke-width="2.8" />
+  <path d="M39.5 35.5 L45.5 41.5" stroke="#18181B" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M31.5 30 H36.5 M34 27.5 V32.5" stroke="#18181B" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Top Right Rank / Keyword Star -->
+  <circle cx="38" cy="10" r="5.5" fill="#18181B" />
+  <path d="M36 10 L38 8.5 V11.5" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
