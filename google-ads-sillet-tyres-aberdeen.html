@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Ads Case Study: 552 Calls for Aberdeen Mobile Tyre Fitter | Sumit Kumar Das</title>
+  <meta name="description" content="How I built and scaled a Google Ads account from a £40/day start to £161/day for an Aberdeen mobile tyre fitter, driving 552 calls in a month and dropping cost per conversion to £4.39." />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              orange: '#FF5722',
+              'orange-hover': '#E64A19',
+              peach: '#FFF5EE',
+              'peach-card': '#FEF7F2',
+              'peach-border': '#FEE4D7',
+              dark: '#111827',
+              muted: '#6B7280',
+            }
+          },
+          boxShadow: {
+            '2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+            'card': '0 2px 8px -2px rgba(0, 0, 0, 0.06), 0 1px 4px -1px rgba(0, 0, 0, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Orange headline bar */
+    .headline-bar {
+      display: block;
+      width: 44px;
+      height: 3.5px;
+      background-color: #FF5722;
+      border-radius: 9999px;
+      margin-top: 6px;
+    }
+
+    /* Carousel viewport & track styles */
+    .gallery-slider-viewport {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 6px 2px 14px 2px;
+    }
+
+    .gallery-slider-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+      user-select: none;
+    }
+
+    /* Responsive card widths: 1 card mobile, 2 tablet, 3 desktop */
+    .gallery-slide {
+      flex: 0 0 100%;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 640px) {
+      .gallery-slide {
+        flex: 0 0 50%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-slide {
+        flex: 0 0 33.333333%;
+      }
+    }
+
+    /* Card image area & Zoom Proof Badge matching design */
+    .card-preview-area {
+      position: relative;
+      height: 200px;
+      background: #fbfcfe;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card-preview-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-card:hover .card-preview-area img {
+      transform: scale(1.03);
+    }
+
+    .zoom-proof-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(30, 41, 59, 0.90);
+      backdrop-filter: blur(6px);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Filter Pill Styling matching reference image */
+    .filter-pill {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      border: 1px solid #e5e7eb;
+      background-color: #ffffff;
+      color: #374151;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .filter-pill:hover {
+      border-color: #FF5722;
+      color: #FF5722;
+    }
+
+    .filter-pill.active {
+      background-color: #FF5722 !important;
+      color: #ffffff !important;
+      border-color: #FF5722 !important;
+      box-shadow: 0 2px 6px rgba(255, 87, 34, 0.28);
+    }
+
+    /* Slider dots */
+    .slider-dot {
+      height: 7px;
+      width: 7px;
+      border-radius: 9999px;
+      background-color: #fed7aa;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .slider-dot.active {
+      width: 22px;
+      background-color: #FF5722;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-orange selection:text-white bg-white text-gray-900">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-18 py-4 flex items-center justify-between">
+      <!-- Logo: SKD. -->
+      <a href="index.html#home" class="text-2xl font-extrabold tracking-tight text-gray-900 flex items-center gap-0.5 hover:opacity-90 transition-opacity">
+        SKD<span class="text-brand-orange text-3xl leading-none">.</span>
+      </a>
+
+      <!-- Navigation links with uniform spacing including Contact -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-7 text-sm font-medium text-gray-600">
+        <a href="#snapshot" class="hover:text-brand-orange transition-colors">Snapshot</a>
+        <a href="#starting-point" class="hover:text-brand-orange transition-colors">Starting Point</a>
+        <a href="#strategy" class="hover:text-brand-orange transition-colors">Strategy</a>
+        <a href="#build" class="hover:text-brand-orange transition-colors">Setup</a>
+        <a href="#results" class="hover:text-brand-orange transition-colors">Results</a>
+        <a href="#gallery" class="hover:text-brand-orange transition-colors font-semibold text-brand-orange">Gallery</a>
+        <a href="#footer" class="hover:text-brand-orange transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right-aligned CTA button -->
+      <div class="flex items-center">
+        <a href="mailto:sumitdas265@gmail.com" class="inline-flex items-center justify-center bg-black hover:bg-gray-800 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm">
+          Let's Talk
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMB ================= -->
+  <div class="max-w-5xl mx-auto px-6 pt-6 pb-2">
+    <a href="index.html#work" class="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-brand-orange transition-colors group">
+      <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      Back to Selected Work
+    </a>
+  </div>
+
+  <!-- ================= CASE STUDY HEADER ================= -->
+  <header class="max-w-5xl mx-auto px-6 pt-6 pb-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach border border-brand-peach-border text-brand-orange text-xs font-semibold tracking-wide uppercase mb-4">
+      <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+      Case Study: Type A • Fresh Account Setup &amp; Scale
+    </div>
+
+    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-4">
+      552 Phone Calls in a Month: <span class="text-brand-orange">Scaling Daily Budget to £161 at £4.39 Per Call</span> for an Aberdeen Mobile Tyre Fitter
+    </h1>
+
+    <p class="text-base md:text-lg text-gray-600 max-w-3xl leading-relaxed">
+      How I built a Google Ads search infrastructure from zero for a mobile tyre fitter and roadside emergency service in Aberdeen, scaling daily budget fourfold while dropping cost per conversion from ~£6 down to £4.39 across 5 campaigns.
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 space-y-12 pb-20">
+
+    <!-- ================= 01 SNAPSHOT ================= -->
+    <section id="snapshot" class="p-6 md:p-8 bg-brand-peach-card rounded-3xl border border-brand-peach-border">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-orange-100">
+        <div>
+          <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Snapshot</h2>
+          <span class="headline-bar"></span>
+        </div>
+        <span class="text-xs font-medium px-3 py-1 rounded-full bg-white text-gray-600 border border-orange-200 self-start sm:self-auto">
+          April 2025 to Present
+        </span>
+      </div>
+
+      <!-- One-Row Metadata Table -->
+      <div class="overflow-x-auto pb-2">
+        <table class="w-full text-left text-xs border-collapse min-w-[640px]">
+          <thead>
+            <tr class="text-gray-400 font-semibold border-b border-orange-200/60">
+              <th class="py-2.5 pr-4 uppercase tracking-wider">Client Type</th>
+              <th class="py-2.5 pr-4 uppercase tracking-wider">Industry</th>
+              <th class="py-2.5 pr-4 uppercase tracking-wider">Location</th>
+              <th class="py-2.5 pr-4 uppercase tracking-wider">Daily Budget</th>
+              <th class="py-2.5 pr-4 uppercase tracking-wider">My Role</th>
+              <th class="py-2.5 pr-2 uppercase tracking-wider">Platforms</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-900 font-medium divide-y divide-orange-100/70">
+            <tr>
+              <td class="py-3 pr-4 font-bold text-gray-900">Sillett Tyres (sillett-tyres.com)</td>
+              <td class="py-3 pr-4">Automotive &amp; Roadside</td>
+              <td class="py-3 pr-4">Aberdeen, UK (up to 50 miles)</td>
+              <td class="py-3 pr-4">£40 at launch → £161 across 5 campaigns</td>
+              <td class="py-3 pr-4 text-brand-orange font-semibold">Sole Account Owner</td>
+              <td class="py-3 pr-2">Google Ads (Search &amp; PMax), Call Tracking</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Headline results (3 big numbers) -->
+      <div class="mt-8 pt-6 border-t border-orange-200/60">
+        <span class="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-4">Headline Results (3 Big Numbers)</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <div class="p-5 bg-white rounded-2xl border border-orange-100 shadow-2xs">
+            <span class="text-3xl md:text-4xl font-extrabold text-brand-orange block mb-1">552 Calls</span>
+            <span class="text-xs font-bold text-gray-800 block">Verified Monthly Enquiries</span>
+            <p class="text-[11px] text-gray-500 mt-1">High-intent motorist booking calls in September 2026 across emergency fitting &amp; roadside help.</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-orange-100 shadow-2xs">
+            <span class="text-3xl md:text-4xl font-extrabold text-brand-orange block mb-1">£6 → £4.39</span>
+            <span class="text-xs font-bold text-gray-800 block">Lower Cost Per Conversion</span>
+            <p class="text-[11px] text-gray-500 mt-1">Cost per lead reduced by 26.8% from initial ~£6 baseline down to £4.39 sustained.</p>
+          </div>
+
+          <div class="p-5 bg-white rounded-2xl border border-orange-100 shadow-2xs">
+            <span class="text-3xl md:text-4xl font-extrabold text-brand-orange block mb-1">20% – 27%</span>
+            <span class="text-xs font-bold text-gray-800 block">Search Conversion Rate</span>
+            <p class="text-[11px] text-gray-500 mt-1">Exceptional lead conversion rates across core search campaigns (location search at 27.4%).</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 02 STARTING POINT & 03 GOAL ================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      
+      <!-- 02 Starting Point (Day 0) -->
+      <section id="starting-point" class="p-6 md:p-7 rounded-3xl border border-gray-200 bg-white">
+        <div class="mb-5">
+          <h2 class="text-lg md:text-xl font-extrabold text-gray-900 tracking-tight">Starting Point (Day 0)</h2>
+          <span class="headline-bar"></span>
+        </div>
+        
+        <ul class="space-y-3 text-xs md:text-sm text-gray-600 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 flex-shrink-0"></span>
+            <span><strong>No Ad Account:</strong> Zero prior Google Ads account, no historical search term data, and no call tracking infrastructure at launch on 1 April 2025.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 flex-shrink-0"></span>
+            <span><strong>Client's Core Goal:</strong> Generate steady, qualified phone enquiries for mobile tyre fitting, roadside assistance, and vehicle recovery rather than passive website clicks.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 flex-shrink-0"></span>
+            <span><strong>Constraints &amp; Service Radius:</strong> Modest £40/day starting budget covering Aberdeen with plans to widen coverage in stages up to 50 miles.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 03 Goal Table -->
+      <section class="p-6 md:p-7 rounded-3xl border border-gray-200 bg-white">
+        <div class="mb-5">
+          <h2 class="text-lg md:text-xl font-extrabold text-gray-900 tracking-tight">Goal</h2>
+          <span class="headline-bar"></span>
+        </div>
+
+        <div class="overflow-hidden rounded-xl border border-gray-100 bg-gray-50/50">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-gray-100 text-gray-600 uppercase font-semibold text-[10px]">
+              <tr>
+                <th class="py-3 px-4">Goal</th>
+                <th class="py-3 px-4">Target</th>
+                <th class="py-3 px-4">Timeline</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 text-gray-800 font-medium">
+              <tr>
+                <td class="py-3 px-4 font-semibold text-gray-900">Phone Call Enquiries</td>
+                <td class="py-3 px-4 text-brand-orange font-bold">Steady, qualified booking calls</td>
+                <td class="py-3 px-4 text-gray-500">Every Month</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-semibold text-gray-900">Cost Per Conversion</td>
+                <td class="py-3 px-4 text-emerald-600 font-bold">Keep low enough to justify scaling</td>
+                <td class="py-3 px-4 text-gray-500">First 30 Days</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-semibold text-gray-900">Scale Ad Capital</td>
+                <td class="py-3 px-4 font-bold text-gray-900">Expand spend once CPA proves stable</td>
+                <td class="py-3 px-4 text-gray-500">Phased Progression</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-gray-400 mt-3 italic">Budget scaling was strictly conditioned on maintaining profitable cost per phone booking throughout expansion.</p>
+      </section>
+
+    </div>
+
+    <!-- ================= 04 RESEARCH AND STRATEGY ================= -->
+    <section id="strategy" class="p-6 md:p-8 bg-brand-peach-card rounded-3xl border border-brand-peach-border">
+      <div class="mb-6">
+        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Research and Strategy</h2>
+        <span class="headline-bar"></span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="p-5 bg-white rounded-2xl border border-orange-100">
+          <div class="w-8 h-8 rounded-lg bg-orange-50 text-brand-orange flex items-center justify-center font-bold text-xs mb-3">
+            01
+          </div>
+          <h4 class="text-sm font-bold text-gray-900 mb-1.5">Emergency Services Intent</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Stranded motorists experiencing a puncture or breakdown require instant assistance. Phone calls convert orders immediately, making click-to-call the primary conversion vehicle over contact forms.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-orange-100">
+          <div class="w-8 h-8 rounded-lg bg-orange-50 text-brand-orange flex items-center justify-center font-bold text-xs mb-3">
+            02
+          </div>
+          <h4 class="text-sm font-bold text-gray-900 mb-1.5">Intent-First Keywords &amp; Negatives</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Seeded campaigns around urgent "near me" and mobile-fitting phrases. Engineered a rigorous negative keyword list from search query data to block competitor brands, scrap yards, marketplaces, and irrelevant queries.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-orange-100">
+          <div class="w-8 h-8 rounded-lg bg-orange-50 text-brand-orange flex items-center justify-center font-bold text-xs mb-3">
+            03
+          </div>
+          <h4 class="text-sm font-bold text-gray-900 mb-1.5">Phased Geographic Radius</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Targeted drivers directly in and around Aberdeen city initially, then systematically expanded the radius outwards toward 50 miles in controlled stages as conversion density and dispatch times aligned.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-orange-100">
+          <div class="w-8 h-8 rounded-lg bg-orange-50 text-brand-orange flex items-center justify-center font-bold text-xs mb-3">
+            04
+          </div>
+          <h4 class="text-sm font-bold text-gray-900 mb-1.5">Multi-Channel Channel Synergy</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Allocated core capital to high-intent Google Search for premium call quality. Layered Performance Max later to capture supplementary local map and discovery impressions once Search conversion rates stabilised.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 05 SETUP AND BUILD ================= -->
+    <section id="build" class="p-6 md:p-8 rounded-3xl border border-gray-200 bg-white">
+      <div class="mb-6">
+        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Setup and Build</h2>
+        <span class="headline-bar"></span>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="p-4 rounded-2xl border border-gray-100 bg-gray-50/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-orange">Account Structure</span>
+            <h4 class="text-sm font-bold text-gray-900">5-Campaign Themed Architecture</h4>
+            <p class="text-xs text-gray-600 max-w-2xl">
+              Engineered one Search campaign per core service offering (mobile fitting, roadside assistance, breakdown), accompanied by a dedicated location-focused Search campaign and a Performance Max expansion campaign.
+            </p>
+          </div>
+          <span class="text-xs font-mono bg-white px-3 py-1 rounded-full border border-gray-200 self-start sm:self-auto text-gray-700">5 Campaigns</span>
+        </div>
+
+        <div class="p-5 rounded-2xl border-2 border-brand-orange/30 bg-orange-50/30">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-orange">Tracking Infrastructure (Core Specialty)</span>
+            <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white">Triple Conversion Actions</span>
+          </div>
+          <h4 class="text-sm font-bold text-gray-900">Multi-Channel Phone Tracking, Shop Visits &amp; Form Audit</h4>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+            Configured call tracking from both Google Ads call extensions and website phone links, verified through detailed Google call reports. Also tracked estimated local shop visits and contact enquiries.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl border border-gray-100 bg-gray-50/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500">Landing Experience</span>
+            <h4 class="text-sm font-bold text-gray-900">Service-Specific Mobile Pages (sillett-tyres.com)</h4>
+            <p class="text-xs text-gray-600 max-w-2xl">
+              Dedicated mobile-first pages for each service: "Flat tyre?" for fitting and "Stranded? Stuck?" for recovery. Equipped with prominent top/bottom click-to-call buttons, 30-minute arrival guarantee, and 4.5-star Google rating.
+            </p>
+          </div>
+          <span class="text-xs font-mono bg-white px-3 py-1 rounded-full border border-gray-200 self-start sm:self-auto text-gray-700">30-Min Arrival Hook</span>
+        </div>
+
+        <div class="p-4 rounded-2xl border border-gray-100 bg-gray-50/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500">Capital Progression</span>
+            <h4 class="text-sm font-bold text-gray-900">Responsive Budget Staging (£40 → £80 → £40 → £161/day)</h4>
+            <p class="text-xs text-gray-600 max-w-2xl">
+              Budget scaled responsively based on client requirements and operational capacity: £40 at launch (Apr 2025), expanded to £80 in growth, consolidated back to £40 when requested, and scaled to £161/day from 7 September 2026.
+            </p>
+          </div>
+          <span class="text-xs font-mono bg-white px-3 py-1 rounded-full border border-gray-200 self-start sm:self-auto text-gray-700">£161 / day Scaled</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 06 LAUNCH AND LEARNING PHASE ================= -->
+    <section class="p-6 md:p-8 bg-brand-peach-card rounded-3xl border border-brand-peach-border">
+      <div class="mb-6">
+        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Launch and Learning Phase</h2>
+        <span class="headline-bar"></span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-5 bg-white rounded-2xl border border-orange-100">
+          <span class="text-xs font-bold text-brand-orange uppercase block mb-1">First 30 Days</span>
+          <h4 class="text-sm font-bold text-gray-900 mb-2">Baseline Data Collection</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Started with £40/day collecting search term reports and call records. Cost per conversion began around £6.00 as the new account established historical quality scores.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-orange-100">
+          <span class="text-xs font-bold text-brand-orange uppercase block mb-1">Testing &amp; Tuning</span>
+          <h4 class="text-sm font-bold text-gray-900 mb-2">Query &amp; Creative Optimization</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Tested keyword match types, creative hooks (speed, 24/7 availability, service area), and distance radius. Pruned weak search terms continuously with exact negative exclusions.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-orange-100">
+          <span class="text-xs font-bold text-brand-orange uppercase block mb-1">Stabilization</span>
+          <h4 class="text-sm font-bold text-gray-900 mb-2">Profitable Scaling to £161/day</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Reallocated capital toward highest-converting hours and keywords. Cost per conversion fell to £4.39 and stayed stable through every budget increase, reaching 552 calls in September.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 07 RESULTS (SEPTEMBER 2026) ================= -->
+    <section id="results" class="p-6 md:p-8 rounded-3xl border border-gray-200 bg-white">
+      <div class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Results</h2>
+          <span class="headline-bar"></span>
+        </div>
+        <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+          Cost Per Conversion Dropped to £4.39
+        </span>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-8">
+        <table class="w-full text-xs text-left min-w-[580px]">
+          <thead class="bg-gray-50 text-gray-500 font-semibold border-b border-gray-200 uppercase text-[10px]">
+            <tr>
+              <th class="py-3.5 px-5">Metric</th>
+              <th class="py-3.5 px-5">Launch (April 2025)</th>
+              <th class="py-3.5 px-5 text-brand-orange">September 2026</th>
+              <th class="py-3.5 px-5 text-emerald-600">Net Impact</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 font-medium text-gray-800">
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-gray-900">Daily Ad Budget</td>
+              <td class="py-3.5 px-5">£40 / day</td>
+              <td class="py-3.5 px-5 font-bold text-brand-orange">£161 / day</td>
+              <td class="py-3.5 px-5 font-bold text-emerald-600">4x Budget Growth</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-gray-900">Cost Per Conversion</td>
+              <td class="py-3.5 px-5">~£6.00</td>
+              <td class="py-3.5 px-5 font-bold text-brand-orange">£4.39</td>
+              <td class="py-3.5 px-5 font-bold text-emerald-600">-26.8% Cost Reduction</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-gray-900">Monthly Phone Calls</td>
+              <td class="py-3.5 px-5">Baseline Volume</td>
+              <td class="py-3.5 px-5 font-bold text-brand-orange">552 Verified Calls</td>
+              <td class="py-3.5 px-5 font-bold text-emerald-600">552 Phone Bookings / Mo.</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-gray-900">Average CPC</td>
+              <td class="py-3.5 px-5">n/a</td>
+              <td class="py-3.5 px-5 font-bold text-gray-900">£1.23</td>
+              <td class="py-3.5 px-5 text-gray-500 font-mono">Controlled Click Costs</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-gray-900">Extra Conversions</td>
+              <td class="py-3.5 px-5">n/a</td>
+              <td class="py-3.5 px-5 font-bold text-gray-900">371 est. shop visits, 122 contacts</td>
+              <td class="py-3.5 px-5 text-emerald-600 font-bold">+493 Additional Actions</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- September Campaign Breakdown Table -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-3">
+          <h4 class="text-sm font-bold text-gray-900">September 2026 Campaign Breakdown: 5 Campaigns</h4>
+          <span class="text-xs font-mono text-gray-400">1 – 30 Sept 2026</span>
+        </div>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-xs text-left min-w-[640px]">
+            <thead class="bg-gray-50 text-gray-500 font-semibold border-b border-gray-200 uppercase text-[10px]">
+              <tr>
+                <th class="py-3 px-4">Campaign</th>
+                <th class="py-3 px-4">Phone Calls</th>
+                <th class="py-3 px-4">Clicks</th>
+                <th class="py-3 px-4">Avg. CPC</th>
+                <th class="py-3 px-4">Cost</th>
+                <th class="py-3 px-4">Conv. Rate</th>
+                <th class="py-3 px-4">Cost / Conv.</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 font-medium text-gray-800">
+              <tr class="bg-orange-50/20">
+                <td class="py-3 px-4 font-bold text-gray-900 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+                  Search: Mobile Fitting
+                </td>
+                <td class="py-3 px-4 font-bold text-brand-orange">104</td>
+                <td class="py-3 px-4">457</td>
+                <td class="py-3 px-4">£1.29</td>
+                <td class="py-3 px-4">£588</td>
+                <td class="py-3 px-4 font-bold text-brand-orange">22.6%</td>
+                <td class="py-3 px-4 font-bold text-emerald-600">£5.68</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-gray-900 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                  Search: Roadside
+                </td>
+                <td class="py-3 px-4 font-bold text-brand-orange">50</td>
+                <td class="py-3 px-4">197</td>
+                <td class="py-3 px-4">£1.91</td>
+                <td class="py-3 px-4">£377</td>
+                <td class="py-3 px-4 font-bold text-brand-orange">27.4%</td>
+                <td class="py-3 px-4 font-bold text-emerald-600">£6.99</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-gray-900 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                  Search: Breakdown
+                </td>
+                <td class="py-3 px-4">23</td>
+                <td class="py-3 px-4">102</td>
+                <td class="py-3 px-4">£2.04</td>
+                <td class="py-3 px-4">£208</td>
+                <td class="py-3 px-4 font-bold text-brand-orange">20.2%</td>
+                <td class="py-3 px-4 text-red-600 font-bold">£10.09</td>
+              </tr>
+              <tr class="bg-emerald-50/20">
+                <td class="py-3 px-4 font-bold text-gray-900 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Search: Location-Focused
+                </td>
+                <td class="py-3 px-4 font-bold text-brand-orange">201</td>
+                <td class="py-3 px-4">801</td>
+                <td class="py-3 px-4">£1.40</td>
+                <td class="py-3 px-4">£1,118</td>
+                <td class="py-3 px-4 font-bold text-brand-orange">27.4%</td>
+                <td class="py-3 px-4 font-bold text-emerald-600">£5.10</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-gray-900 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                  Performance Max
+                </td>
+                <td class="py-3 px-4 font-bold text-brand-orange">174</td>
+                <td class="py-3 px-4">1,363</td>
+                <td class="py-3 px-4 text-emerald-600 font-bold">£0.96</td>
+                <td class="py-3 px-4">£1,307</td>
+                <td class="py-3 px-4">1.0%</td>
+                <td class="py-3 px-4 font-bold text-emerald-600">£3.09</td>
+              </tr>
+              <tr class="bg-gray-50/80 font-bold text-gray-900 border-t-2 border-gray-200">
+                <td class="py-3 px-4 uppercase text-[11px]">Total Account (Sept 2026)</td>
+                <td class="py-3 px-4 text-brand-orange">552 calls</td>
+                <td class="py-3 px-4">2,920</td>
+                <td class="py-3 px-4">£1.23</td>
+                <td class="py-3 px-4">£3,597</td>
+                <td class="py-3 px-4 text-brand-orange">2.1% (Blended)</td>
+                <td class="py-3 px-4 text-emerald-600">£4.39 / conv.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Live Performance Summary Box -->
+      <div class="bg-gray-900 text-white rounded-2xl p-5 md:p-6 border border-gray-800 shadow-lg">
+        <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            <span class="text-xs font-mono text-gray-300">Google Ads • Live Verified Reporting Dashboard</span>
+          </div>
+          <span class="text-[11px] font-mono text-gray-400">September 2026 Monthly Reporting • Aberdeen, UK</span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div class="p-3 bg-gray-800/80 rounded-xl">
+            <span class="text-[10px] text-gray-400 uppercase tracking-wider block">September Spend</span>
+            <span class="text-lg font-bold text-white">£3,597</span>
+          </div>
+          <div class="p-3 bg-gray-800/80 rounded-xl">
+            <span class="text-[10px] text-gray-400 uppercase tracking-wider block">Total Phone Calls</span>
+            <span class="text-lg font-bold text-brand-orange">552 Calls</span>
+          </div>
+          <div class="p-3 bg-gray-800/80 rounded-xl">
+            <span class="text-[10px] text-gray-400 uppercase tracking-wider block">Cost Per Conversion</span>
+            <span class="text-lg font-bold text-emerald-400">£4.39 / Conv</span>
+          </div>
+          <div class="p-3 bg-gray-800/80 rounded-xl">
+            <span class="text-[10px] text-gray-400 uppercase tracking-wider block">Search Conv. Rate</span>
+            <span class="text-lg font-bold text-brand-orange">20% – 27%</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex justify-between text-[11px] text-gray-400">
+            <span>Cost Per Conversion Drop (Launch ~£6.00 → £4.39)</span>
+            <span class="text-emerald-400 font-mono">-26.8% Efficiency Gain</span>
+          </div>
+          <div class="w-full bg-gray-800 rounded-full h-3 flex overflow-hidden p-0.5">
+            <div class="bg-gray-600 h-full rounded-l-full" style="width: 35%"></div>
+            <div class="bg-orange-400 h-full" style="width: 25%"></div>
+            <div class="bg-brand-orange h-full rounded-r-full" style="width: 40%"></div>
+          </div>
+          <div class="flex justify-between text-[10px] text-gray-500 font-mono pt-1">
+            <span>Launch (Apr 2025): ~£6.00/conv</span>
+            <span>Scale Stage: £5.10–£5.68 on Core Search</span>
+            <span>September 2026: £4.39 Blended</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 08 KEY LEARNINGS ================= -->
+    <section class="p-6 md:p-8 bg-brand-peach-card rounded-3xl border border-brand-peach-border">
+      <div class="mb-4">
+        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Key Learnings</h2>
+        <span class="headline-bar"></span>
+      </div>
+
+      <div class="space-y-3 text-xs md:text-sm text-gray-700 leading-relaxed pt-2">
+        <p>
+          <strong class="text-gray-900">What worked:</strong> Intent-first keywords, dedicated click-to-call mobile landers, and scaling in steps. Core Search campaigns carry the highest conversion quality, converting at 20–27%, while Performance Max adds volume at the lowest average CPC (£0.96).
+        </p>
+        <p>
+          <strong class="text-gray-900">What did not:</strong> Performance Max converts at roughly 1% per click, and much of its measured value represents estimated shop visits—requiring strict evaluation against verified phone calls. Breakdown service was the most expensive stream at £10.09 per conversion.
+        </p>
+        <p>
+          <strong class="text-gray-900">What I would do next:</strong> Shift budget from vehicle breakdown toward mobile fitting (which is currently limited by budget) and establish direct integration between Google Ads call logs and the garage's dispatch software to track booked jobs against calls.
+        </p>
+      </div>
+
+      <!-- Bonus Separate Workstream Box -->
+      <div class="mt-6 p-4 md:p-5 bg-white rounded-2xl border border-orange-200">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">Also Delivered: Local SEO Workstream (Aberdeen 3-Mile Radius)</span>
+        </div>
+        <p class="text-xs text-gray-600 mb-2">
+          Conducted local search optimization alongside Google Ads to secure non-paid organic market share:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-semibold text-gray-800">
+          <div class="p-2.5 bg-orange-50/40 rounded-xl border border-orange-100 flex items-center gap-2">
+            <span class="text-emerald-600 font-extrabold">#1</span>
+            <span>Rank 1 for "tyres Aberdeen"</span>
+          </div>
+          <div class="p-2.5 bg-orange-50/40 rounded-xl border border-orange-100 flex items-center gap-2">
+            <span class="text-emerald-600 font-extrabold">Top 3</span>
+            <span>"Buy tyres near me" on local IP</span>
+          </div>
+          <div class="p-2.5 bg-orange-50/40 rounded-xl border border-orange-100 flex items-center gap-2">
+            <span class="text-emerald-600 font-extrabold">Top 3</span>
+            <span>Google Business Profile Pack</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 09 TOOLS USED ================= -->
+    <section class="p-6 md:p-8 rounded-3xl border border-gray-200 bg-white">
+      <div class="mb-6">
+        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Tools Used</h2>
+        <span class="headline-bar"></span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        
+        <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center font-bold text-xs">
+            Ads
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">Google Ads</h4>
+            <span class="text-[10px] text-gray-500">Search &amp; Smart Bidding</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-orange-500/10 text-brand-orange flex items-center justify-center font-bold text-xs">
+            PMax
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">Performance Max</h4>
+            <span class="text-[10px] text-gray-500">Local Area Extension</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs">
+            Call
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">Call Reporting</h4>
+            <span class="text-[10px] text-gray-500">Forwarding &amp; Duration Logs</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-sky-500/10 text-sky-600 flex items-center justify-center font-bold text-xs">
+            GBP
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">Google Business</h4>
+            <span class="text-[10px] text-gray-500">Local Map Pack Ranking</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 10 IMAGE & ASSET GALLERY (SLIDER AS PER DESIGN) ================= -->
+    <section id="gallery" class="p-6 md:p-8 bg-brand-peach-card rounded-3xl border border-brand-peach-border">
+      
+      <!-- Top Gallery Header matching reference screenshot -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mb-7">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">Visual Proof &amp; Campaign Gallery</h2>
+          <span class="headline-bar"></span>
+        </div>
+
+        <!-- Filter Pill Controls matching shared image + Carousel navigation arrows -->
+        <div class="flex flex-wrap items-center gap-3">
+          <!-- Filter Buttons (Pill shaped as in screenshot) -->
+          <div class="inline-flex items-center gap-2 flex-wrap" id="filter-buttons-group">
+            <button onclick="applyGalleryFilter('all', this)" class="filter-pill active">All Assets</button>
+            <button onclick="applyGalleryFilter('dashboard', this)" class="filter-pill">Dashboard</button>
+            <button onclick="applyGalleryFilter('landing', this)" class="filter-pill">Landing Pages</button>
+            <button onclick="applyGalleryFilter('calls', this)" class="filter-pill">Call Logs</button>
+            <button onclick="applyGalleryFilter('ads', this)" class="filter-pill">Ad Creatives</button>
+          </div>
+
+          <!-- Slider Navigation Arrows -->
+          <div class="flex items-center gap-2 ml-auto lg:ml-2">
+            <button id="slider-arrow-prev" onclick="moveSlide(-1)" aria-label="Previous Slide" class="w-9 h-9 rounded-full bg-white border border-gray-300 hover:border-brand-orange hover:text-brand-orange flex items-center justify-center text-gray-700 transition-all shadow-2xs disabled:opacity-40 disabled:cursor-not-allowed">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="slider-arrow-next" onclick="moveSlide(1)" aria-label="Next Slide" class="w-9 h-9 rounded-full bg-white border border-gray-300 hover:border-brand-orange hover:text-brand-orange flex items-center justify-center text-gray-700 transition-all shadow-2xs disabled:opacity-40 disabled:cursor-not-allowed">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Viewport & Sliding Track -->
+      <div class="gallery-slider-viewport" id="slider-viewport">
+        <div class="gallery-slider-track" id="slider-track">
+
+          <!-- Card 01: September 2026 Campaign Breakdown -->
+          <div class="gallery-slide" data-category="dashboard">
+            <div class="gallery-card bg-white rounded-2xl border border-orange-100 overflow-hidden shadow-2xs hover:shadow-card transition-all group flex flex-col h-full">
+              <div class="px-4 py-3 bg-white border-b border-gray-100 flex items-center justify-between">
+                <span class="text-[10px] font-extrabold uppercase text-brand-orange tracking-wider">CAMPAIGN REPORTING</span>
+                <span class="text-[10px] text-gray-500 font-mono">Sept 2026</span>
+              </div>
+              
+              <div class="card-preview-area cursor-pointer" onclick="openProofModal('01', 'September 2026 Campaign Breakdown', 'Google Ads performance table verifying 552 phone calls across 5 campaigns, £1.23 average CPC, £3,597 total spend, and £4.39 cost per conversion.', 'assets/images/case-study-sillet/sillet-tyres-campaign-table.png')">
+                <img src="assets/images/case-study-sillet/sillet-tyres-campaign-table.png" alt="Sillett Tyres Campaign Performance Dashboard" onerror="renderVisualFallback(this, 'dashboard')" />
+                <div class="fallback-canvas hidden w-full h-full p-4 bg-gradient-to-br from-orange-50/50 via-white to-orange-100/40 flex flex-col justify-between">
+                  <div class="flex items-center justify-between text-[11px] font-mono text-gray-700">
+                    <span class="font-bold text-gray-900">Search: Location-Focused</span>
+                    <span class="text-emerald-600 font-bold">201 Calls</span>
+                  </div>
+                  <div class="space-y-1.5 py-2">
+                    <div class="h-2 bg-orange-200 rounded w-5/6"></div>
+                    <div class="h-2 bg-gray-200 rounded w-2/3"></div>
+                  </div>
+                  <div class="text-[10px] font-mono text-gray-500">Avg CPC: £1.23 • Cost/Conv: £4.39</div>
+                </div>
+
+                <div class="zoom-proof-badge">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span>Zoom Proof</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h4 class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-brand-orange transition-colors">
+                    01. September 2026 Campaign Dashboard
+                  </h4>
+                  <p class="text-[11px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                    Verified dashboard proving 552 calls, £3,597 spend, and £4.39 average cost per conversion across 5 campaigns.
+                  </p>
+                </div>
+              </div>
+
+              <div onclick="openProofModal('01', 'September 2026 Campaign Breakdown', 'Google Ads performance table verifying 552 phone calls across 5 campaigns, £1.23 average CPC, £3,597 total spend, and £4.39 cost per conversion.', 'assets/images/case-study-sillet/sillet-tyres-campaign-table.png')" class="cursor-pointer px-4 py-2.5 bg-orange-50/40 border-t border-orange-100 text-[11px] font-semibold text-brand-orange flex items-center justify-between hover:bg-orange-50 transition-colors">
+                <span>Enlarge &amp; Inspect Data</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 02: Mobile Tyre Fitting Landing Page -->
+          <div class="gallery-slide" data-category="landing">
+            <div class="gallery-card bg-white rounded-2xl border border-orange-100 overflow-hidden shadow-2xs hover:shadow-card transition-all group flex flex-col h-full">
+              <div class="px-4 py-3 bg-white border-b border-gray-100 flex items-center justify-between">
+                <span class="text-[10px] font-extrabold uppercase text-brand-orange tracking-wider">LANDING EXPERIENCE</span>
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded">Mobile Fitting</span>
+              </div>
+              
+              <div class="card-preview-area cursor-pointer" onclick="openProofModal('02', 'Mobile Tyre Fitting Landing Page', 'Mobile-first landing page for tyre fitting in Aberdeen featuring click-to-call buttons, fast quote actions, and 4.5-star Google rating trust proof.', 'assets/images/case-study-sillet/sillet-tyres-mobile-landing.png')">
+                <img src="assets/images/case-study-sillet/sillet-tyres-mobile-landing.png" alt="Sillett Tyres Mobile Fitting Landing Page" onerror="renderVisualFallback(this, 'landing')" />
+                <div class="fallback-canvas hidden w-full h-full p-4 bg-gradient-to-br from-emerald-50/40 via-white to-orange-50 flex flex-col justify-between">
+                  <div class="flex items-center justify-between text-[11px] font-mono text-gray-700">
+                    <span class="font-bold">sillett-tyres.com</span>
+                    <span class="text-orange-600 font-bold">Call Now</span>
+                  </div>
+                  <div class="text-[10px] text-gray-500 text-center">Flat Tyre? Mobile Fitting at Your Location</div>
+                </div>
+
+                <div class="zoom-proof-badge">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span>Zoom Proof</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h4 class="text-xs md:text-sm font-bold text-brand-orange group-hover:text-brand-orange-hover transition-colors">
+                    02. Mobile Tyre Fitting Landing Page
+                  </h4>
+                  <p class="text-[11px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                    High-converting mobile lander with frictionless phone triggers, emergency dispatch promise, and transparent tyre options.
+                  </p>
+                </div>
+              </div>
+
+              <div onclick="openProofModal('02', 'Mobile Tyre Fitting Landing Page', 'Mobile-first landing page for tyre fitting in Aberdeen featuring click-to-call buttons, fast quote actions, and 4.5-star Google rating trust proof.', 'assets/images/case-study-sillet/sillet-tyres-mobile-landing.png')" class="cursor-pointer px-4 py-2.5 bg-orange-50/40 border-t border-orange-100 text-[11px] font-semibold text-brand-orange flex items-center justify-between hover:bg-orange-50 transition-colors">
+                <span>Enlarge &amp; Inspect Funnel</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 03: Roadside Assistance Landing Page -->
+          <div class="gallery-slide" data-category="landing">
+            <div class="gallery-card bg-white rounded-2xl border border-orange-100 overflow-hidden shadow-2xs hover:shadow-card transition-all group flex flex-col h-full">
+              <div class="px-4 py-3 bg-white border-b border-gray-100 flex items-center justify-between">
+                <span class="text-[10px] font-extrabold uppercase text-brand-orange tracking-wider">LANDING EXPERIENCE</span>
+                <span class="text-[10px] font-bold text-blue-700 bg-blue-50 border border-blue-200/60 px-2 py-0.5 rounded">Roadside Help</span>
+              </div>
+              
+              <div class="card-preview-area cursor-pointer" onclick="openProofModal('03', 'Roadside Assistance Emergency Landing Page', 'Dedicated breakdown recovery and roadside assistance page tailored to stranded drivers on Scottish roads with urgent tap-to-call actions.', 'assets/images/case-study-sillet/sillet-tyres-roadside-landing.png')">
+                <img src="assets/images/case-study-sillet/sillet-tyres-roadside-landing.png" alt="Sillett Tyres Roadside Assistance Landing Page" onerror="renderVisualFallback(this, 'landing')" />
+                <div class="fallback-canvas hidden w-full h-full p-4 bg-gradient-to-br from-blue-50/40 via-white to-orange-50/40 flex flex-col justify-between">
+                  <div class="flex items-center justify-between text-[11px] font-mono text-gray-700">
+                    <span class="font-bold">Stranded? Stuck?</span>
+                    <span class="text-orange-600 font-bold">Call Now</span>
+                  </div>
+                  <div class="text-[10px] text-gray-500 text-center">Fast Emergency Roadside Dispatch Aberdeen</div>
+                </div>
+
+                <div class="zoom-proof-badge">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span>Zoom Proof</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h4 class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-brand-orange transition-colors">
+                    03. Roadside Emergency Landing Page
+                  </h4>
+                  <p class="text-[11px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                    Emergency roadside assistance page converting urgent stranded driver queries into immediate incoming dispatch calls.
+                  </p>
+                </div>
+              </div>
+
+              <div onclick="openProofModal('03', 'Roadside Assistance Emergency Landing Page', 'Dedicated breakdown recovery and roadside assistance page tailored to stranded drivers on Scottish roads with urgent tap-to-call actions.', 'assets/images/case-study-sillet/sillet-tyres-roadside-landing.png')" class="cursor-pointer px-4 py-2.5 bg-orange-50/40 border-t border-orange-100 text-[11px] font-semibold text-brand-orange flex items-center justify-between hover:bg-orange-50 transition-colors">
+                <span>Enlarge &amp; Inspect Funnel</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 04: Verified Call Details & Logs -->
+          <div class="gallery-slide" data-category="calls">
+            <div class="gallery-card bg-white rounded-2xl border border-orange-100 overflow-hidden shadow-2xs hover:shadow-card transition-all group flex flex-col h-full">
+              <div class="px-4 py-3 bg-white border-b border-gray-100 flex items-center justify-between">
+                <span class="text-[10px] font-extrabold uppercase text-brand-orange tracking-wider">CALL LOG AUDIT</span>
+                <span class="text-[10px] text-gray-500 font-mono">552 Calls/Mo</span>
+              </div>
+              
+              <div class="card-preview-area cursor-pointer" onclick="openProofModal('04', 'Google Ads Call Details & Durations', 'Verified call log reports from Google Ads confirming phone bookings, call timestamps, caller area codes across Aberdeen, and qualified durations.', 'assets/images/case-study-sillet/sillet-tyres-call-report.png')">
+                <img src="assets/images/case-study-sillet/sillet-tyres-call-report.png" alt="Sillett Tyres Call Report Log" onerror="renderVisualFallback(this, 'calls')" />
+                <div class="fallback-canvas hidden w-full h-full p-4 bg-gradient-to-br from-blue-50/40 via-white to-orange-50/40 flex flex-col justify-between">
+                  <div class="flex items-center justify-between text-[11px] font-mono text-gray-700">
+                    <span class="font-bold">Caller Area Code: Aberdeen (01224)</span>
+                    <span class="text-brand-orange font-bold">552 Verified Calls</span>
+                  </div>
+                </div>
+
+                <div class="zoom-proof-badge">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span>Zoom Proof</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h4 class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-brand-orange transition-colors">
+                    04. Google Ads Call Logs
+                  </h4>
+                  <p class="text-[11px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                    Verified call tracking records demonstrating genuine driver booking enquiries across Aberdeen and surrounding areas.
+                  </p>
+                </div>
+              </div>
+
+              <div onclick="openProofModal('04', 'Google Ads Call Details & Durations', 'Verified call log reports from Google Ads confirming phone bookings, call timestamps, caller area codes across Aberdeen, and qualified durations.', 'assets/images/case-study-sillet/sillet-tyres-call-report.png')" class="cursor-pointer px-4 py-2.5 bg-orange-50/40 border-t border-orange-100 text-[11px] font-semibold text-brand-orange flex items-center justify-between hover:bg-orange-50 transition-colors">
+                <span>Enlarge &amp; Inspect Logs</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 05: Responsive Search Ads - Mobile Fitting -->
+          <div class="gallery-slide" data-category="ads">
+            <div class="gallery-card bg-white rounded-2xl border border-orange-100 overflow-hidden shadow-2xs hover:shadow-card transition-all group flex flex-col h-full">
+              <div class="px-4 py-3 bg-white border-b border-gray-100 flex items-center justify-between">
+                <span class="text-[10px] font-extrabold uppercase text-brand-orange tracking-wider">AD CREATIVES</span>
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded">22.6% CVR</span>
+              </div>
+              
+              <div class="card-preview-area cursor-pointer" onclick="openProofModal('05', 'Responsive Search Ads - Mobile Fitting', 'High-CTR ad copies emphasizing fast arrival, 24/7 service, local Aberdeen trust signals, and direct click-to-call mobile buttons.', 'assets/images/case-study-sillet/sillet-tyres-ad-copy-mobile.png')">
+                <img src="assets/images/case-study-sillet/sillet-tyres-ad-copy-mobile.png" alt="Sillett Tyres Mobile Ad Copy" onerror="renderVisualFallback(this, 'ads')" />
+                <div class="fallback-canvas hidden w-full h-full p-4 bg-gradient-to-br from-amber-50/40 via-white to-orange-50/40 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-blue-700 leading-snug">
+                    Mobile Tyre Fitting Aberdeen | We Come To You 24/7 | Fast Arrival
+                  </div>
+                </div>
+
+                <div class="zoom-proof-badge">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span>Zoom Proof</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h4 class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-brand-orange transition-colors">
+                    05. Mobile Fitting Search Ad Copy
+                  </h4>
+                  <p class="text-[11px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                    Responsive search ads achieving Good ad strength with 5–8% CTR and 22.6% conversion rate on emergency queries.
+                  </p>
+                </div>
+              </div>
+
+              <div onclick="openProofModal('05', 'Responsive Search Ads - Mobile Fitting', 'High-CTR ad copies emphasizing fast arrival, 24/7 service, local Aberdeen trust signals, and direct click-to-call mobile buttons.', 'assets/images/case-study-sillet/sillet-tyres-ad-copy-mobile.png')" class="cursor-pointer px-4 py-2.5 bg-orange-50/40 border-t border-orange-100 text-[11px] font-semibold text-brand-orange flex items-center justify-between hover:bg-orange-50 transition-colors">
+                <span>Enlarge &amp; Inspect Creatives</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 06: Responsive Search Ads - Roadside Assistance -->
+          <div class="gallery-slide" data-category="ads">
+            <div class="gallery-card bg-white rounded-2xl border border-orange-100 overflow-hidden shadow-2xs hover:shadow-card transition-all group flex flex-col h-full">
+              <div class="px-4 py-3 bg-white border-b border-gray-100 flex items-center justify-between">
+                <span class="text-[10px] font-extrabold uppercase text-brand-orange tracking-wider">AD CREATIVES</span>
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded">27.4% CVR</span>
+              </div>
+              
+              <div class="card-preview-area cursor-pointer" onclick="openProofModal('06', 'Responsive Search Ads - Roadside Assistance', 'High-converting ad copies for roadside assistance driving 27.4% conversion rate with 30-minute dispatch messaging and location extensions.', 'assets/images/case-study-sillet/sillet-tyres-ad-copy-roadside.png')">
+                <img src="assets/images/case-study-sillet/sillet-tyres-ad-copy-roadside.png" alt="Sillett Tyres Roadside Ad Copy" onerror="renderVisualFallback(this, 'ads')" />
+                <div class="fallback-canvas hidden w-full h-full p-4 bg-gradient-to-br from-amber-50/40 via-white to-orange-50/40 flex flex-col justify-between">
+                  <div class="text-[11px] font-bold text-blue-700 leading-snug">
+                    Emergency Roadside Assistance Aberdeen | 24/7 Rapid Recovery
+                  </div>
+                </div>
+
+                <div class="zoom-proof-badge">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span>Zoom Proof</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h4 class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-brand-orange transition-colors">
+                    06. Roadside Search Ad Copy
+                  </h4>
+                  <p class="text-[11px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                    Emergency roadside creative messaging delivering 27.4% conversion rate and £6.99 cost per phone call enquiry.
+                  </p>
+                </div>
+              </div>
+
+              <div onclick="openProofModal('06', 'Responsive Search Ads - Roadside Assistance', 'High-converting ad copies for roadside assistance driving 27.4% conversion rate with 30-minute dispatch messaging and location extensions.', 'assets/images/case-study-sillet/sillet-tyres-ad-copy-roadside.png')" class="cursor-pointer px-4 py-2.5 bg-orange-50/40 border-t border-orange-100 text-[11px] font-semibold text-brand-orange flex items-center justify-between hover:bg-orange-50 transition-colors">
+                <span>Enlarge &amp; Inspect Creatives</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 07: Negative Keyword Shielding -->
+          <div class="gallery-slide" data-category="ads">
+            <div class="gallery-card bg-white rounded-2xl border border-orange-100 overflow-hidden shadow-2xs hover:shadow-card transition-all group flex flex-col h-full">
+              <div class="px-4 py-3 bg-white border-b border-gray-100 flex items-center justify-between">
+                <span class="text-[10px] font-extrabold uppercase text-brand-orange tracking-wider">NEGATIVE KEYWORDS</span>
+                <span class="text-[10px] text-red-600 bg-red-50 border border-red-200/80 px-2 py-0.5 rounded font-mono font-bold">Comprehensive</span>
+              </div>
+              
+              <div class="card-preview-area cursor-pointer" onclick="openProofModal('07', 'Negative Keyword Shielding Audit', 'Continuous negative keyword exclusions blocking competitor brand names, marketplaces, part-worn tyres, and irrelevant automotive queries.', 'assets/images/case-study-sillet/sillet-tyres-negative-keywords.png')">
+                <img src="assets/images/case-study-sillet/sillet-tyres-negative-keywords.png" alt="Sillett Tyres Negative Keywords List" onerror="renderVisualFallback(this, 'ads')" />
+                <div class="fallback-canvas hidden w-full h-full p-4 bg-gradient-to-br from-red-50/40 via-white to-orange-50/40 flex flex-col justify-between">
+                  <div class="text-[11px] font-mono font-bold text-red-700">Negative Keyword Exclusion Safeguard</div>
+                </div>
+
+                <div class="zoom-proof-badge">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <span>Zoom Proof</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between bg-white">
+                <div>
+                  <h4 class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-brand-orange transition-colors">
+                    07. Waste Exclusion Safeguard
+                  </h4>
+                  <p class="text-[11px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                    Rigorous negative keyword filtering protecting daily ad budget from competitor searches and out-of-scope services.
+                  </p>
+                </div>
+              </div>
+
+              <div onclick="openProofModal('07', 'Negative Keyword Shielding Audit', 'Continuous negative keyword exclusions blocking competitor brand names, marketplaces, part-worn tyres, and irrelevant automotive queries.', 'assets/images/case-study-sillet/sillet-tyres-negative-keywords.png')" class="cursor-pointer px-4 py-2.5 bg-orange-50/40 border-t border-orange-100 text-[11px] font-semibold text-brand-orange flex items-center justify-between hover:bg-orange-50 transition-colors">
+                <span>View Excluded Queries</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slider Pagination Controls & Indicator -->
+      <div class="flex items-center justify-between mt-5 pt-3 border-t border-orange-100/70">
+        <span class="text-xs font-mono text-gray-500" id="slider-counter-info">Showing 1 to 3 of 7 assets</span>
+        <div class="flex items-center gap-1.5" id="slider-dots-group">
+          <!-- Dots rendered dynamically via JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= 11 CTA ================= -->
+    <section id="cta" class="p-8 md:p-12 rounded-3xl bg-brand-peach border border-brand-peach-border text-center relative overflow-hidden">
+      <div class="max-w-xl mx-auto space-y-4 relative z-10">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">Need a High-Intent Google Ads Account?</h2>
+        <span class="headline-bar mx-auto"></span>
+
+        <p class="text-xs md:text-sm text-gray-600 leading-relaxed pt-2">
+          I build and scale high-intent paid search campaigns with verified call tracking, intent-themed structures, and conversion-engineered landing pages tailored to UK local services.
+        </p>
+
+        <div class="pt-5 flex flex-wrap items-center justify-center gap-3">
+          <a href="mailto:sumitdas265@gmail.com" class="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-semibold px-6 py-3 rounded-full shadow-md shadow-orange-200 transition-all">
+            Let's Talk
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          <a href="index.html#work" class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 border border-gray-300 text-gray-800 text-xs font-semibold px-6 py-3 rounded-full transition-all">
+            Back to Selected Work
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= LIGHTBOX / PROOF MODAL ================= -->
+  <div id="proof-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full p-6 md:p-8 shadow-2xl border border-gray-100 relative max-h-[92vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-orange"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">Verified Evidence Asset</span>
+        </div>
+        <button onclick="closeProofModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center justify-center transition-colors font-bold text-sm">
+          ✕
+        </button>
+      </div>
+
+      <!-- Image display wrap -->
+      <div id="proof-modal-image-wrap" class="mt-4 rounded-xl overflow-hidden border border-gray-200 bg-gray-50 max-h-[460px] flex items-center justify-center">
+        <img id="proof-modal-img" src="" alt="Proof Preview" class="w-full h-auto max-h-[460px] object-contain" />
+      </div>
+
+      <!-- Fallback visual if no image available -->
+      <div id="proof-modal-custom-view" class="mt-4 p-6 bg-red-50/60 rounded-xl border border-red-200 hidden">
+        <h4 class="text-xs font-bold text-red-700 uppercase mb-3">Exclusion Keyword Audit List</h4>
+        <div class="flex flex-wrap gap-2 text-xs font-mono text-red-800">
+          <span class="px-2.5 py-1 bg-white rounded border border-red-200">-[competitor brands]</span>
+          <span class="px-2.5 py-1 bg-white rounded border border-red-200">-[part worn tyres]</span>
+          <span class="px-2.5 py-1 bg-white rounded border border-red-200">-[scrap cars]</span>
+          <span class="px-2.5 py-1 bg-white rounded border border-red-200">-[diy repair]</span>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-2">
+        <h3 id="proof-modal-title" class="text-lg md:text-xl font-extrabold text-gray-900 leading-snug">Asset Title</h3>
+        <p id="proof-modal-desc" class="text-xs md:text-sm text-gray-600 leading-relaxed">Asset Description</p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-end gap-3">
+        <button onclick="closeProofModal()" class="px-4 py-2 rounded-full text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+          Close Preview
+        </button>
+        <a href="mailto:sumitdas265@gmail.com" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-brand-orange text-white hover:bg-brand-orange-hover transition-colors shadow-sm">
+          Discuss Similar Campaign
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white border-t border-gray-100 pt-16 pb-12" id="footer">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8 lg:gap-12 pb-12">
+        
+        <!-- Left Column: Scalable Together Headline & Bio -->
+        <div class="max-w-xl space-y-3">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-[1.15]">
+            <span class="text-gray-900 block">Let's build something</span>
+            <span class="text-brand-orange block">scalable together.</span>
+          </h2>
+          <p class="text-xs md:text-sm text-gray-500 max-w-md leading-relaxed pt-1">
+            Available for full-time leadership roles, high-impact growth consulting, and performance marketing architecture.
+          </p>
+        </div>
+
+        <!-- Right Column: Contact Info with circular badges -->
+        <div class="space-y-3.5 text-xs md:text-sm text-gray-700 flex-shrink-0">
+          <div class="space-y-3.5">
+            <!-- Email -->
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-gray-50 border border-gray-200/70 flex items-center justify-center text-gray-500 flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <a href="mailto:sumitdas265@gmail.com" class="hover:text-brand-orange transition-colors font-medium">sumitdas265@gmail.com</a>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-gray-50 border border-gray-200/70 flex items-center justify-center text-gray-500 flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a11.042 11.042 0 001.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <a href="tel:+919044341548" class="hover:text-brand-orange transition-colors font-medium">+91-9044341548</a>
+            </div>
+
+            <!-- Location -->
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-gray-50 border border-gray-200/70 flex items-center justify-center text-gray-500 flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <span class="font-medium text-gray-700">India</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Full-Width Divider & Center Copyright -->
+      <div class="border-t border-gray-100 pt-8 text-center text-xs text-gray-500 flex items-center justify-center gap-1.5">
+        <span>&copy; <span id="current-year">2026</span> Sumit Kumar Das. All rights reserved.</span>
+        <span class="text-rose-500 inline-block text-sm leading-none">&hearts;</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // State management for slider
+    let currentSlide = 0;
+    let selectedCategory = 'all';
+
+    // DOM references
+    const sliderTrack = document.getElementById('slider-track');
+    const prevBtn = document.getElementById('slider-arrow-prev');
+    const nextBtn = document.getElementById('slider-arrow-next');
+    const dotsContainer = document.getElementById('slider-dots-group');
+    const counterDisplay = document.getElementById('slider-counter-info');
+
+    // Filter matching cards
+    function getActiveCards() {
+      const cards = Array.from(document.querySelectorAll('.gallery-slide'));
+      if (selectedCategory === 'all') return cards;
+      return cards.filter(card => card.getAttribute('data-category') === selectedCategory);
+    }
+
+    // Determine how many cards fit on current screen
+    function cardsPerScreen() {
+      const w = window.innerWidth;
+      if (w >= 1024) return 3;
+      if (w >= 640) return 2;
+      return 1;
+    }
+
+    // Max scroll index based on current count
+    function getMaxIndex() {
+      const activeCount = getActiveCards().length;
+      const perScreen = cardsPerScreen();
+      return Math.max(0, activeCount - perScreen);
+    }
+
+    // Update track position and controls
+    function refreshSlider() {
+      const activeCards = getActiveCards();
+      const perScreen = cardsPerScreen();
+      const maxIndex = getMaxIndex();
+
+      if (currentSlide > maxIndex) {
+        currentSlide = maxIndex;
+      }
+      if (currentSlide < 0) {
+        currentSlide = 0;
+      }
+
+      const stepPercent = 100 / perScreen;
+      sliderTrack.style.transform = `translateX(-${currentSlide * stepPercent}%)`;
+
+      // Update button state
+      if (prevBtn) prevBtn.disabled = currentSlide === 0;
+      if (nextBtn) nextBtn.disabled = currentSlide >= maxIndex || activeCards.length <= perScreen;
+
+      // Update counter text
+      if (counterDisplay) {
+        const start = activeCards.length > 0 ? currentSlide + 1 : 0;
+        const end = Math.min(currentSlide + perScreen, activeCards.length);
+        counterDisplay.textContent = `Showing ${start} to ${end} of ${activeCards.length} assets`;
+      }
+
+      renderDots(maxIndex + 1);
+    }
+
+    // Build pagination dots
+    function renderDots(totalPositions) {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      if (totalPositions <= 1) return;
+
+      for (let i = 0; i < totalPositions; i++) {
+        const dot = document.createElement('div');
+        dot.className = `slider-dot ${i === currentSlide ? 'active' : ''}`;
+        dot.onclick = () => {
+          currentSlide = i;
+          refreshSlider();
+        };
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    // Arrow navigation
+    function moveSlide(direction) {
+      const maxIndex = getMaxIndex();
+      if (direction === 1 && currentSlide < maxIndex) {
+        currentSlide++;
+      } else if (direction === -1 && currentSlide > 0) {
+        currentSlide--;
+      }
+      refreshSlider();
+    }
+
+    // Category filter button handler
+    function applyGalleryFilter(category, clickedBtn) {
+      selectedCategory = category;
+      currentSlide = 0;
+
+      // Update active style on pills
+      document.querySelectorAll('.filter-pill').forEach(btn => btn.classList.remove('active'));
+      if (clickedBtn) {
+        clickedBtn.classList.add('active');
+      }
+
+      // Hide or show slides based on selected category
+      document.querySelectorAll('.gallery-slide').forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      refreshSlider();
+    }
+
+    // Fallback UI when local image path is not yet present
+    function renderVisualFallback(img, category) {
+      img.style.display = 'none';
+      const container = img.parentElement;
+      const fallback = container.querySelector('.fallback-canvas');
+      if (fallback) {
+        fallback.classList.remove('hidden');
+        fallback.classList.add('flex');
+      }
+    }
+
+    // Proof Modal functionality
+    function openProofModal(id, title, desc, imgSrc) {
+      const modal = document.getElementById('proof-modal');
+      const titleElem = document.getElementById('proof-modal-title');
+      const descElem = document.getElementById('proof-modal-desc');
+      const imgElem = document.getElementById('proof-modal-img');
+      const imgWrap = document.getElementById('proof-modal-image-wrap');
+      const customView = document.getElementById('proof-modal-custom-view');
+
+      if (!modal) return;
+
+      titleElem.textContent = title;
+      descElem.textContent = desc;
+
+      if (imgSrc && imgSrc.trim() !== '') {
+        imgElem.src = imgSrc;
+        imgWrap.classList.remove('hidden');
+        customView.classList.add('hidden');
+      } else {
+        imgWrap.classList.add('hidden');
+        customView.classList.remove('hidden');
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProofModal() {
+      const modal = document.getElementById('proof-modal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Modal listeners
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeProofModal();
+    });
+
+    document.getElementById('proof-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'proof-modal') closeProofModal();
+    });
+
+    // Touch swipe support for slider
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const sliderViewport = document.getElementById('slider-viewport');
+    if (sliderViewport) {
+      sliderViewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      sliderViewport.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) moveSlide(1);
+          else moveSlide(-1);
+        }
+      }, { passive: true });
+    }
+
+    // Resize listener for responsive recalculations
+    window.addEventListener('resize', () => {
+      refreshSlider();
+    });
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      refreshSlider();
+    });
+  </script>
+</body>
+</html>
