@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="46" height="46" fill="none">
+  <!-- Analytics Desktop Monitor -->
+  <rect x="10" y="8" width="28" height="20" rx="3" stroke="#18181B" stroke-width="2.5" fill="#FFFFFF" />
+  <!-- Monitor Stand -->
+  <path d="M24 28 V34 M17 34 H31" stroke="#18181B" stroke-width="2.5" stroke-linecap="round" />
+  
+  <!-- Line Chart on Screen -->
+  <path d="M14 22 L19 16 L25 19 L33 13" stroke="#18181B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Bar elements inside monitor -->
+  <rect x="14" y="23" width="2" height="2" fill="#18181B" />
+  <rect x="19" y="21" width="2" height="4" fill="#18181B" />
+  <rect x="25" y="22" width="2" height="3" fill="#18181B" />
+  <rect x="31" y="18" width="2" height="7" fill="#18181B" />
+
+  <!-- Magnifying Glass Inspecting Chart -->
+  <circle cx="11" cy="27" r="6" fill="#FFFFFF" stroke="#18181B" stroke-width="2.5" />
+  <path d="M7 31 L2 36" stroke="#18181B" stroke-width="3" stroke-linecap="round" />
+  <path d="M9 27 H13 M11 25 V29" stroke="#18181B" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Settings Cog Top-Right -->
+  <g transform="translate(36, 18)">
+    <circle cx="5" cy="5" r="3" fill="#18181B" stroke="#FFFFFF" stroke-width="1.2" />
+    <path d="M5 0 V2 M5 8 V10 M0 5 H2 M8 5 H10" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Broadcast Megaphone Top-Left -->
+  <path d="M5 8 L8 10 V6 Z" fill="#18181B" />
+  <path d="M10 7 C11 7.5 11 8.5 10 9" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="46" height="46" fill="none">
+  <!-- Document Page with Folded Corner -->
+  <path d="M10 5 C10 3.9 10.9 3 12 3 H26 L36 13 V39 C36 40.1 35.1 41 34 41 H12 C10.9 41 10 40.1 10 39 V5 Z" fill="#18181B" />
+  <path d="M26 3 V13 H36 Z" fill="#3F3F46" />
+  
+  <!-- Content Lines on Document -->
+  <line x1="15" y1="17" x2="23" y2="17" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" />
+  <line x1="15" y1="23" x2="31" y2="23" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" />
+  <line x1="15" y1="29" x2="26" y2="29" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" />
+  <line x1="15" y1="35" x2="22" y2="35" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" />
+
+  <!-- Pen Writing Diagonally -->
+  <g transform="translate(24, 8) rotate(45)">
+    <rect x="0" y="0" width="5" height="18" rx="1.5" fill="#18181B" stroke="#FFFFFF" stroke-width="1" />
+    <polygon points="0,18 5,18 2.5,23" fill="#18181B" />
+  </g>
+
+  <!-- Strategy Gear at Bottom Right -->
+  <g transform="translate(32, 32)">
+    <circle cx="8" cy="8" r="4.5" fill="#18181B" stroke="#FFFFFF" stroke-width="1.8" />
+    <path d="M8 1 V3.5 M8 12.5 V15 M1 8 H3.5 M12.5 8 H15 M3 3 L5 5 M11 11 L13 13 M3 13 L5 11 M11 5 L13 3" stroke="#18181B" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>
